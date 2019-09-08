@@ -22,7 +22,7 @@ returns
 }
 
 
-• POST https://codeforbcs-test-backend.herokuapp.com/api/register
+• POST https://codeforbcs-test-backend.herokuapp.com/api/login
 
 input
 >{  
