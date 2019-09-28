@@ -1,0 +1,8 @@
+{
+    "name": "Code For BCS Test Backend",
+    "version": "1.0.0",
+    "description": "A simple backend that allows for user registration and login to help Code For BCS members learn React",
+    "template": {
+        "forceLanguage": "en"
+    }
+}

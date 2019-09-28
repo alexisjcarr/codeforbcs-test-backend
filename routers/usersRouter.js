@@ -5,6 +5,40 @@ const jwt = require("jsonwebtoken");
 const Users = require("../data/models/usersModel");
 const secrets = require("../config/secrets");
 
+/**
+ * @api {post} /api/register Registers a new user
+ * @apiGroup Authentication
+ * @apiSuccess {Object[]} Registered user
+ * @apiSuccess {Number} users.id User id
+ * @apiSuccess {String} users.username User username
+ * @apiSuccess {Boolean} users.password User password
+ * @apiSuccessExample {json} Success
+ *    HTTP/1.1 200 OK
+ *    [{
+ *      "id": 1,
+ *      "username": alexisjcarr
+ *      "password": iMHaShEdPaSsWoRd
+ *    }]
+ * @apiErrorExample {json} List error
+ *    HTTP/1.1 500 Internal Server Error
+ */
+
+/**
+ * @api {post} /api/login User login
+ * @apiGroup Authentication
+ * @apiSuccess {Object[]} Logged in user
+ * @apiSuccess {String} Welcomr message
+ * @apiSuccess {String} Auth token
+ * @apiSuccessExample {json} Success
+ *    HTTP/1.1 200 OK
+ *    [{
+ *      "message": "Welcome alexisjcarr",
+ *      "token": iAmAToken
+ *    }]
+ * @apiErrorExample {json} List error
+ *  HTTP/1.1 401 Invalid credentials
+ * @apiErrorExample {json} List error
+ *    HTTP/1.1 500 Internal Server Error*/
 router.post("/register", async (req, res) => {
   const user = req.body;
 
@@ -18,6 +52,23 @@ router.post("/register", async (req, res) => {
   }
 });
 
+/**
+ * @api {post} /api/register User login
+ * @apiGroup Authentication
+ * @apiSuccess {Object[]} Logged in user
+ * @apiSuccess {String} Welcomr message
+ * @apiSuccess {String} Auth token
+ * @apiSuccessExample {json} Success
+ *    HTTP/1.1 200 OK
+ *    [{
+ *      "message": "Welcome alexisjcarr",
+ *      "token": iAmAToken
+ *    }]
+ * @apiErrorExample {json} List error
+ *  HTTP/1.1 401 Invalid credentials
+ * @apiErrorExample {json} List error
+ *    HTTP/1.1 500 Internal Server Error
+ */
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
 
